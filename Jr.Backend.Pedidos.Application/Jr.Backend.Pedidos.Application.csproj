@@ -4,4 +4,15 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="Jr.Backend.Message.Events" Version="1.0.0-alpha-01" />
+    <PackageReference Include="MassTransit" Version="7.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Jr.Backend.Pedidos.Domain\Jr.Backend.Pedidos.Domain.csproj" />
+    <ProjectReference Include="..\Jr.Backend.Pedidos.Infrastructure\Jr.Backend.Pedidos.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>
