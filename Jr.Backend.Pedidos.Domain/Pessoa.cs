@@ -1,4 +1,4 @@
-﻿using Jr.Backend.Pedidos.Domain.ValueObject;
+﻿using Jr.Backend.Pedidos.Domain.ValueObject.Pessoa;
 using System;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;

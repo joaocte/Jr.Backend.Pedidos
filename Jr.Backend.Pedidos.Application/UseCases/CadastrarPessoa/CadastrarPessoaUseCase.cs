@@ -26,10 +26,10 @@ namespace Jr.Backend.Pedidos.Application.UseCases.CadastrarPessoa
 
             var pessoaJaCadastrada = await pessoaRepository.ExistsAsync(pessoa.Documentos.Cpf);
 
-            var pessoaEntity = mapper.Map<Infrastructure.Entity.Pessoa>(pessoa);
-
             if (pessoaJaCadastrada)
                 return;
+
+            var pessoaEntity = mapper.Map<Infrastructure.Entity.Pessoa>(pessoa);
 
             await pessoaRepository.AddAsync(pessoaEntity);
 

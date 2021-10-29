@@ -25,7 +25,7 @@ namespace Jr.Backend.Pedidos.WorkerService.DependencyInjection
                      {
                          ep.PrefetchCount = 10;
                          ep.UseMessageRetry(r => r.Interval(2, 100));
-                         ep.Consumer(typeof(CadastrarPessoaUseCase), provider.GetService);
+                         ep.Consumer<CadastrarPessoaUseCase>(provider);
                      });
                  }));
                 x.AddConsumer<CadastrarPessoaUseCase>();

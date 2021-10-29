@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
-namespace Jr.Backend.Pedidos.Domain.ValueObject
+namespace Jr.Backend.Pedidos.Domain.ValueObject.Pessoa
 {
     public class Endereco : GenericValueObject
     {

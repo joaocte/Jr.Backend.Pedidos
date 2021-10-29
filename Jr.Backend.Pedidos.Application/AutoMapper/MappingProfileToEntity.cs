@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Jr.Backend.Message.Events.Pessoa;
-using Jr.Backend.Pedidos.Domain.ValueObject;
+using Jr.Backend.Pedidos.Domain.ValueObject.Pessoa;
 
 namespace Jr.Backend.Pedidos.Application.AutoMapper
 {
