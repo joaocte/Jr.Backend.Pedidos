@@ -1,10 +1,8 @@
-﻿using Jr.Backend.Libs.Domain.Abstractions.ValueObject;
-using System.Collections.Generic;
-using System.Text.Json.Serialization;
+﻿using System.Text.Json.Serialization;
 
 namespace Jr.Backend.Pedidos.Domain.ValueObject.Pessoa
 {
-    public class Endereco : GenericValueObject
+    public class Endereco
     {
         public string Logradouro { get; }
         public string Bairro { get; }
@@ -27,18 +25,6 @@ namespace Jr.Backend.Pedidos.Domain.ValueObject.Pessoa
             Pais = pais;
             Cep = cep;
             Complemento = complemento;
-        }
-
-        protected override IEnumerable<object> GetEqualityComponents()
-        {
-            yield return Logradouro;
-            yield return Bairro;
-            yield return Numero;
-            yield return Estado;
-            yield return Cidade;
-            yield return Pais;
-            yield return Cep;
-            yield return Complemento;
         }
 
         public static implicit operator string(Endereco endereco) => endereco.ToString();

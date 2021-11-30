@@ -1,10 +1,8 @@
-﻿using Jr.Backend.Libs.Domain.Abstractions.ValueObject;
-using System.Collections.Generic;
-using System.Text.Json.Serialization;
+﻿using System.Text.Json.Serialization;
 
 namespace Jr.Backend.Pedidos.Domain.ValueObject.Pessoa
 {
-    public class Documentos : GenericValueObject
+    public class Documentos
     {
         public string Cpf { get; }
         public string Rg { get; }
@@ -26,13 +24,6 @@ namespace Jr.Backend.Pedidos.Domain.ValueObject.Pessoa
         public Documentos(string cpf, string rg) : this(cpf)
         {
             Rg = rg;
-        }
-
-        protected override IEnumerable<object> GetEqualityComponents()
-        {
-            yield return Cpf;
-            yield return Rg;
-            yield return TituloEleitoral;
         }
     }
 }

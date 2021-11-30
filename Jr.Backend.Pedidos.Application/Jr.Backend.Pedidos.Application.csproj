@@ -6,7 +6,8 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="10.1.1" />
-    <PackageReference Include="Jr.Backend.Message.Events" Version="1.0.0-alpha-01" />
+    <PackageReference Include="Jror.Backend.Message.Events" Version="1.0.0" />
+    <PackageReference Include="Jror.Backend.Message.Share" Version="1.0.0" />
     <PackageReference Include="MassTransit" Version="7.2.3" />
   </ItemGroup>
 

@@ -1,5 +1,7 @@
 ﻿using GreenPipes;
 using Jr.Backend.Pedidos.Application.UseCases.CadastrarPessoa;
+using Jr.Backend.Pedidos.Infrastructure.DependencyInjection;
+using Jr.Backend.Pessoa.Application.DependencyInjection;
 using MassTransit;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -11,6 +13,8 @@ namespace Jr.Backend.Pedidos.WorkerService.DependencyInjection
     {
         public static void AddServiceDependencyWorkerService(this IServiceCollection services, IConfiguration configuration)
         {
+            services.AddServiceDependencyApplication();
+            services.AddServiceDependencyInfrastructure();
             services.AddMassTransit(x =>
             {
                 x.AddBus(provider => Bus.Factory.CreateUsingRabbitMq(cfg =>

@@ -29,8 +29,6 @@ namespace Jr.Backend.Pedidos.WorkerService
             return Host.CreateDefaultBuilder(args)
                 .ConfigureServices((hostContext, services) =>
                 {
-                    services.AddServiceDependencyApplication();
-                    services.AddServiceDependencyInfrastructure();
                     services.AddServiceDependencyWorkerService(config);
                 });
         }

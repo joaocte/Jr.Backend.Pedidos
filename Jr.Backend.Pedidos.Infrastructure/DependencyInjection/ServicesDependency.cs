@@ -1,9 +1,9 @@
-﻿using Jr.Backend.Libs.Infrastructure.MongoDB.Abstractions;
-using Jr.Backend.Libs.Infrastructure.MongoDB.Abstractions.Interfaces;
-using Jr.Backend.Libs.Infrastructure.MongoDB.DependencyInjection;
-using Jr.Backend.Pedidos.Infrastructure.Entity;
+﻿using Jr.Backend.Pedidos.Infrastructure.Entity;
 using Jr.Backend.Pedidos.Infrastructure.Interfaces;
 using Jr.Backend.Pedidos.Infrastructure.Repository.MongoDb;
+using Jror.Backend.Libs.Infrastructure.MongoDB.Abstractions;
+using Jror.Backend.Libs.Infrastructure.MongoDB.Abstractions.Interfaces;
+using Jror.Backend.Libs.Infrastructure.MongoDB.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Jr.Backend.Pedidos.Infrastructure.DependencyInjection
@@ -12,7 +12,7 @@ namespace Jr.Backend.Pedidos.Infrastructure.DependencyInjection
     {
         public static void AddServiceDependencyInfrastructure(this IServiceCollection services)
         {
-            services.AddServiceDependencyJrInfrastructureMongoDb(ConnectionType.DirectConnection);
+            services.AddServiceDependencyJrorInfrastructureMongoDb(ConnectionType.DirectConnection);
 
             services.AddScoped<IPessoaRepository>((p) =>
             {

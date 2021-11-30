@@ -1,10 +1,8 @@
-﻿using Jr.Backend.Libs.Domain.Abstractions.ValueObject;
-using System.Collections.Generic;
-using System.Text.Json.Serialization;
+﻿using System.Text.Json.Serialization;
 
 namespace Jr.Backend.Pedidos.Domain.ValueObject.Pessoa
 {
-    public class NomeCompleto : GenericValueObject
+    public class NomeCompleto
     {
         public string Nome { get; }
         public string Sobrenome { get; }
@@ -19,12 +17,6 @@ namespace Jr.Backend.Pedidos.Domain.ValueObject.Pessoa
         public NomeCompleto(string nome)
         {
             Nome = nome;
-        }
-
-        protected override IEnumerable<object> GetEqualityComponents()
-        {
-            yield return Nome;
-            yield return Sobrenome;
         }
 
         public static implicit operator NomeCompleto(string nomeCompleto) => new(nomeCompleto);
