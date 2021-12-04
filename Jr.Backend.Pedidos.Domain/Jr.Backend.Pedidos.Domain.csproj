@@ -5,9 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Jror.Backend.Libs.Domain" Version="1.0.5" />
-    <PackageReference Include="Jror.Backend.Libs.Domain.Abstractions" Version="1.0.5" />
-    <PackageReference Include="Jror.Backend.Libs.Domain.Core" Version="1.0.5" />
+    <PackageReference Include="Jror.Backend.Libs.Domain" Version="1.1.1" />
+    <PackageReference Include="Jror.Backend.Libs.Domain.Abstractions" Version="1.1.1" />
+    <PackageReference Include="Jror.Backend.Libs.Domain.Core" Version="1.1.1" />
   </ItemGroup>
 
 </Project>

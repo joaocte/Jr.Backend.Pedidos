@@ -8,27 +8,25 @@ namespace Jr.Backend.Pedidos.Domain
     public class Pessoa
     {
         [JsonConstructor]
-        public Pessoa(NomeCompleto nomeCompleto, IList<Endereco> enderecos, Documentos documentos)
+        public Pessoa(string nome, string sobrenome, IList<Endereco> enderecos, string cpf, string rg, string tituloEleitoral)
         {
-            NomeCompleto = nomeCompleto;
-            Enderecos = enderecos;
-            Documentos = documentos;
             Id = Guid.NewGuid();
-        }
-
-        public Pessoa(Guid id, NomeCompleto nomeCompleto, IList<Endereco> enderecos, Documentos documentos)
-        {
-            NomeCompleto = nomeCompleto;
+            Nome = nome;
+            Sobrenome = sobrenome;
             Enderecos = enderecos;
-            Documentos = documentos;
-            Id = id;
+            Cpf = cpf;
+            Rg = rg;
+            TituloEleitoral = tituloEleitoral;
         }
 
         public Guid Id { get; set; }
-        public NomeCompleto NomeCompleto { get; }
+        public string Nome { get; }
+        public string Sobrenome { get; }
 
         public IList<Endereco> Enderecos { get; }
 
-        public Documentos Documentos { get; }
+        public string Cpf { get; }
+        public string Rg { get; }
+        public string TituloEleitoral { get; }
     }
 }

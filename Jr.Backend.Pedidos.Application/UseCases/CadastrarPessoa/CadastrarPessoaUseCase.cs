@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
-using Jr.Backend.Message.Events.Pessoa.Evemts;
 using Jr.Backend.Pedidos.Infrastructure.Interfaces;
 using Jror.Backend.Libs.Infrastructure.Data.Shared.Interfaces;
+using Jror.Backend.Message.Events.Pessoa.Events;
 using MassTransit;
 using System.Threading.Tasks;
 
@@ -24,7 +24,7 @@ namespace Jr.Backend.Pedidos.Application.UseCases.CadastrarPessoa
         {
             var pessoa = context.Message as PessoaCadastradaEvent;
 
-            var pessoaJaCadastrada = await pessoaRepository.ExistsAsync(pessoa.Documentos.Cpf);
+            var pessoaJaCadastrada = await pessoaRepository.ExistsAsync(pessoa.Cpf);
 
             if (pessoaJaCadastrada)
                 return;

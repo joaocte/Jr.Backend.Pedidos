@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using Jr.Backend.Message.Events.Pessoa.Evemts;
-using Jr.Backend.Message.Share.Pessoa;
+using Jror.Backend.Message.Events.Pessoa.Events;
+using Jror.Backend.Message.Share.Pessoa;
 
 namespace Jr.Backend.Pedidos.Application.AutoMapper
 {
@@ -9,8 +9,6 @@ namespace Jr.Backend.Pedidos.Application.AutoMapper
         public MappingProfileToEnvent()
         {
             CreateMap<Infrastructure.Entity.Endereco, Endereco>();
-            CreateMap<Infrastructure.Entity.Documentos, Documentos>();
-            CreateMap<Infrastructure.Entity.NomeCompleto, NomeCompleto>();
             CreateMap<Infrastructure.Entity.Pessoa, PessoaCadastradaEvent>();
         }
     }
