@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
 using Jr.Backend.Pedidos.Application.AutoMapper;
 using Jr.Backend.Pedidos.Application.UseCases.CadastrarPessoa;
+using Jr.Backend.Pedidos.Application.UseCases.DeletarPessoa;
 using Microsoft.Extensions.DependencyInjection;
-
 namespace Jr.Backend.Pessoa.Application.DependencyInjection
 {
     public static class ServicesDependency
@@ -20,6 +20,10 @@ namespace Jr.Backend.Pessoa.Application.DependencyInjection
             services.AddSingleton(mapper);
 
             services.AddScoped<ICadastrarPessoaUseCase, CadastrarPessoaUseCase>();
+            services.Decorate<ICadastrarPessoaUseCase, CadastrarPessoaValidationUseCase>();
+
+            services.AddScoped<IDeletarPessoaUseCase, DeletarPessoaUseCase>();
+            services.Decorate<IDeletarPessoaUseCase, DeletarPessoaValidationUseCase>();
         }
     }
 }

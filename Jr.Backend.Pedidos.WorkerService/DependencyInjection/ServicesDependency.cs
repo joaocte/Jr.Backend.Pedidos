@@ -1,5 +1,6 @@
 ﻿using GreenPipes;
 using Jr.Backend.Pedidos.Application.UseCases.CadastrarPessoa;
+using Jr.Backend.Pedidos.Application.UseCases.DeletarPessoa;
 using Jr.Backend.Pedidos.Infrastructure.DependencyInjection;
 using Jr.Backend.Pessoa.Application.DependencyInjection;
 using MassTransit;
@@ -29,10 +30,18 @@ namespace Jr.Backend.Pedidos.WorkerService.DependencyInjection
                      {
                          ep.PrefetchCount = 10;
                          ep.UseMessageRetry(r => r.Interval(2, 100));
-                         ep.Consumer<CadastrarPessoaUseCase>(provider);
+                         ep.Consumer<CadastrarPessoaValidationUseCase>(provider);
+                     });
+                     cfg.ReceiveEndpoint("PessoaDeletadaEvent", ep =>
+                     {
+                         ep.PrefetchCount = 10;
+                         ep.UseMessageRetry(r => r.Interval(2, 100));
+                         ep.Consumer<DeletarPessoaValidationUseCase>(provider);
+
                      });
                  }));
-                x.AddConsumer<CadastrarPessoaUseCase>();
+                x.AddConsumer<CadastrarPessoaValidationUseCase>();
+                x.AddConsumer<DeletarPessoaValidationUseCase>();
             });
             services.AddMassTransitHostedService();
         }

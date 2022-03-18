@@ -10,6 +10,7 @@ namespace Jr.Backend.Pedidos.Application.AutoMapper
         {
             CreateMap<Infrastructure.Entity.Endereco, Endereco>();
             CreateMap<Infrastructure.Entity.Pessoa, PessoaCadastradaEvent>();
+            CreateMap<Infrastructure.Entity.Pessoa, PessoaDeletadaEvent>();
         }
     }
 }

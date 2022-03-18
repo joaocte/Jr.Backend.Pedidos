@@ -24,11 +24,6 @@ namespace Jr.Backend.Pedidos.Application.UseCases.CadastrarPessoa
         {
             var pessoa = context.Message as PessoaCadastradaEvent;
 
-            var pessoaJaCadastrada = await pessoaRepository.ExistsAsync(pessoa.Cpf);
-
-            if (pessoaJaCadastrada)
-                return;
-
             var pessoaEntity = mapper.Map<Infrastructure.Entity.Pessoa>(pessoa);
 
             await pessoaRepository.AddAsync(pessoaEntity);

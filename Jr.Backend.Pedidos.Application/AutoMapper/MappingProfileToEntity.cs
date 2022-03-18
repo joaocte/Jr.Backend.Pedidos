@@ -13,6 +13,7 @@ namespace Jr.Backend.Pedidos.Application.AutoMapper
 
             CreateMap<Jror.Backend.Message.Share.Pessoa.Endereco, Infrastructure.Entity.Endereco>();
             CreateMap<PessoaCadastradaEvent, Infrastructure.Entity.Pessoa>();
+            CreateMap<PessoaDeletadaEvent, Infrastructure.Entity.Pessoa>();
         }
     }
 }
